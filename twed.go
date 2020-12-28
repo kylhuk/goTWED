@@ -5,7 +5,7 @@
 //	https://github.com/Konstantin8105/c4go/
 //
 
-package main
+package goTWED
 
 import "math"
 import "github.com/Konstantin8105/c4go/noarch"
