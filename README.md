@@ -7,15 +7,38 @@ If you have any suggestions, either open an issue or a pull request with the cha
 Have fun!
 
 # Requirements
-* You need the gcc binary in your PATH variable. On Windows, the easies way is to install TDM-GCC[2]
+You need the gcc binary in your PATH variable. On Windows, the easiest way is to install [TDM-GCC][2].
 
 # Getting started
 ```go
 go get -u github.com/kylhuk/goTWED
 ```
 
+I have added an example file to get you started as fast as possible. It is stored under `example/example.go`
 ```go
+package main
 
+import (
+	"fmt"
+	"github.com/kylhuk/goTWED"
+)
+
+func main() {
+
+	ta := []float64{0, 0, 1, 1, 2, 3, 5, 2, 0, 1, -0.1}
+	tsa := []float64{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	tb := []float64{0, 1, 1, 1, 2, 3, 5, 2, 0, 1, -0.1}
+	tsb := []float64{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	nu := float64(1.1)
+	lambda := float64(2.2)
+	degree := int32(1)
+
+	dist := goTWED.TWED(ta, tsa, tb, tsb, nu, lambda, degree)
+
+	if dist != -1 {
+		fmt.Println("The calculated distance is: ", dist)
+	}
+}
 ```
 
 # Citidation
