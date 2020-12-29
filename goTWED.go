@@ -47,7 +47,7 @@ func TWED(ta []float64, tsa []float64, tb []float64, tsb []float64, nu float64, 
 		return -1
 	}
 
-	dist := C.double(0) // CTWED writes to this object
+	dist := C.double(0)  // CTWED writes to this object
 	la := C.int(len(ta)) // length of the time series A
 	lb := C.int(len(tb)) // length of the time series B
 
