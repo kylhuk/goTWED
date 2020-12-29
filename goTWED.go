@@ -1,28 +1,38 @@
+// goTWED offers Go bindings for the C library of TWED
 package goTWED
 
-//#cgo LDFLAGS: -lm
-//#cgo LDFLAGS: -Wl,--allow-multiple-definition
 /*
-	#include "twed.c"
+#cgo LDFLAGS: -lm
+#cgo LDFLAGS: -Wl,--allow-multiple-definition
+#include "twed.c"
 */
 import "C"
+
 import (
 	"fmt"
 	"github.com/sirupsen/logrus"
 )
 
-// Input:
-// ta []float64 - Time series A, e.g. {5, 1, 3, -8}
-// tsa []float64 - Time stamps of time series A, e.g {0, 1, 2, 3}
-// tb []float64 - Time series B, e.g. {1, 5, 1, 2}
-// tsb []float64 - Time stamps of time series B, e.g {0, 1, 2, 3}
-// nu float64 - hyperparameter nu, e.g. 1
-// lambda float64 - hyperparameter lambda, e.g. 1
-// degree uint32 - power degree for the evaluation of the local distance between samples; degree > 0 required
-//
-// Output:
-// distance float64
+/*
+TWED compares two time series and calculates the distance between them. If the distance is 0, the two time series are
+identical. The bigger the distance, the bigger the difference between the two time series
+
+Input:
+
+	ta []float64 - Time series A, e.g. {5, 1, 3, -8}
+	tsa []float64 - Time stamps of time series A, e.g {0, 1, 2, 3}
+	tb []float64 - Time series B, e.g. {1, 5, 1, 2}
+	tsb []float64 - Time stamps of time series B, e.g {0, 1, 2, 3}
+	nu float64 - hyperparameter nu, e.g. 1
+	lambda float64 - hyperparameter lambda, e.g. 1
+	degree uint32 - power degree for the evaluation of the local distance between samples; degree > 0 required
+
+Output:
+
+	distance float64
+*/
 func TWED(ta []float64, tsa []float64, tb []float64, tsb []float64, nu float64, lambda float64, degree int32) (distance float64) {
+
 	// Error handling
 	if len(ta) != len(tsa) {
 		logrus.Error(fmt.Sprintf("Length mismatch: time series ta[] does not have the same length as tsa[]. Length of ta[]: %d Length of tsa[]: %d", len(ta), len(tsa)))
