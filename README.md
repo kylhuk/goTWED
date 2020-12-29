@@ -1,3 +1,4 @@
+![Go](https://github.com/kylhuk/goTWED/workflows/Go/badge.svg)
 # goTWED: Go bindings for the [Time Warp Edit Distance][1] algorithm
 
 Go bindings for the C library of P. Marteau's TWED algorithm.
