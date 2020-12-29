@@ -1,4 +1,4 @@
-![Go](https://github.com/kylhuk/goTWED/workflows/Go/badge.svg) [![codecov](https://codecov.io/gh/kylhuk/goTWED/branch/main/graph/badge.svg?token=V56U12ZLT1)](https://codecov.io/gh/kylhuk/goTWED)
+![Go](https://github.com/kylhuk/goTWED/workflows/Go/badge.svg) [![codecov](https://codecov.io/gh/kylhuk/goTWED/branch/main/graph/badge.svg?token=V56U12ZLT1)](https://codecov.io/gh/kylhuk/goTWED) [![GoDoc](https://godoc.org/github.com/kylhuk/goTWED?status.svg)](https://godoc.org/github.com/kylhuk/goTWED)
 # goTWED: Go bindings for the [Time Warp Edit Distance][1] algorithm
 
 Go bindings for the C library of P. Marteau's TWED algorithm.
