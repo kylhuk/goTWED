@@ -34,7 +34,7 @@ func main() {
 	lambda := float64(2.2)
 	degree := int32(1)
 
-	dist := goTWED.TWED(ta, tsa, tb, tsb, nu, lambda, degree)
+	dist := gotwed.TWED(ta, tsa, tb, tsb, nu, lambda, degree)
 
 	if dist != -1 {
 		fmt.Println("The calculated distance is: ", dist)
