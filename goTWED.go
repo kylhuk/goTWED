@@ -1,5 +1,5 @@
-// goTWED offers Go bindings for the C library of TWED
-package goTWED
+// Package gotwed offers Go bindings for the C library of TWED
+package gotwed
 
 /*
 #cgo LDFLAGS: -lm

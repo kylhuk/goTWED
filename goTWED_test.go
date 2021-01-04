@@ -1,4 +1,4 @@
-package goTWED
+package gotwed
 
 import "testing"
 
